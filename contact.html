@@ -1,0 +1,321 @@
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frederick PIXEL - Personal Portfolio</title>
+    <link rel="stylesheet" href="assets/css/typography.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div class="pixel_tm_all_wrap">
+      <div class="leftpart">
+        <div class="leftpart_inner">
+          <div class="logo">
+            <a href="./"><img src="assets/img/logo/logo.png" alt="" /></a>
+          </div>
+          <div class="menu">
+            <a href="./"
+              ><img
+                src="assets/img/svg/home-run.svg"
+                alt="homerun"
+                class="svg"
+              /><span class="menu_content">Home</span></a
+            >
+            <a href="about.html"
+              ><img
+                src="assets/img/svg/avatar.svg"
+                alt="avatar"
+                class="svg"
+              /><span class="menu_content">About</span></a
+            >
+            <a href="portfolio.html"
+              ><img
+                src="assets/img/svg/briefcase.svg"
+                alt="briefcase"
+                class="svg"
+              /><span class="menu_content">Portfolio</span></a
+            >
+            <a href="progress.html"
+              ><img
+                src="assets/img/svg/paper.svg"
+                alt="paper"
+                class="svg"
+              /><span class="menu_content">Progress</span></a
+            >
+            <a class="active" href="contact.html"
+              ><img src="assets/img/svg/mail.svg" alt="mail" class="svg" /><span
+                class="menu_content"
+                >Contact</span
+              ></a
+            >
+          </div>
+          <div class="copyright">
+            <p>
+              © 2021 Frederick Pixel<br />Created by
+              <a
+                href="https://firstpixel.co.uk/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                First Pixel
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="rightpart">
+        <div class="rightpart_in">
+          <div class="pixel_tm_section">
+            <div class="container">
+              <div class="tabcontent">
+                <!-- Main content start -->
+                <div class="pixel_tm_contact">
+                  <div class="pixel_tm_title">
+                    <div class="title_flex">
+                      <div class="left">
+                        <h3>Contact<small>Get in Touch</small></h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="map_wrap" id="map-canvas"></div>
+                  <div class="fields">
+                    <span>
+                      <form class="contact_form" id="commentForm" method="post">
+                        <div class="first">
+                          <ul>
+                            <span
+                              ><li>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  id="name"
+                                  placeholder="Name"
+                                  autocomplete="off"
+                                  required
+                                /></li
+                            ></span>
+                            <span
+                              ><li>
+                                <input
+                                  type="email"
+                                  name="email"
+                                  id="email"
+                                  placeholder="Email"
+                                  required
+                                /></li
+                            ></span>
+                            <span
+                              ><li>
+                                <textarea
+                                  id="message"
+                                  name="message"
+                                  placeholder="Message"
+                                  required
+                                ></textarea></li
+                            ></span>
+                          </ul>
+                        </div>
+                        <div class="pixel_tm_button">
+                          <button type="submit" class="ib-button">
+                            Send Message
+                          </button>
+                        </div>
+                      </form>
+                    </span>
+                  </div>
+                </div>
+                <!-- Main content end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASeGyh-HVmkGpZ8lS0oM6bL7MRckLUYtY"></script>
+  <script src="assets/js/jquery.validate.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#commentForm").validate({
+        rules: {
+          name: {
+            required: true,
+            minlength: 3,
+          },
+          email: {
+            required: true,
+            email: true,
+          },
+          message: {
+            required: true,
+          },
+        },
+      });
+    });
+
+    var lat = parseFloat("52.415509");
+    var lng = parseFloat("-1.464324");
+    var pin = "assets/img/Main/position_on_map.png";
+    function initMap() {
+      var myLatLng = { lat: lat, lng: lng };
+      var map = new google.maps.Map(document.getElementById("map-canvas"), {
+        zoom: 15,
+        center: myLatLng,
+        zoomControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+        styles: [
+          {
+            featureType: "administrative",
+            elementType: "all",
+            stylers: [
+              {
+                saturation: "-100",
+              },
+            ],
+          },
+          {
+            featureType: "administrative.province",
+            elementType: "all",
+            stylers: [
+              {
+                visibility: "off",
+              },
+            ],
+          },
+          {
+            featureType: "landscape",
+            elementType: "all",
+            stylers: [
+              {
+                saturation: -100,
+              },
+              {
+                lightness: 65,
+              },
+              {
+                visibility: "on",
+              },
+            ],
+          },
+          {
+            featureType: "poi",
+            elementType: "all",
+            stylers: [
+              {
+                saturation: -100,
+              },
+              {
+                lightness: "50",
+              },
+              {
+                visibility: "simplified",
+              },
+            ],
+          },
+          {
+            featureType: "road",
+            elementType: "all",
+            stylers: [
+              {
+                saturation: "-100",
+              },
+            ],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "all",
+            stylers: [
+              {
+                visibility: "simplified",
+              },
+            ],
+          },
+          {
+            featureType: "road.arterial",
+            elementType: "all",
+            stylers: [
+              {
+                lightness: "30",
+              },
+            ],
+          },
+          {
+            featureType: "road.local",
+            elementType: "all",
+            stylers: [
+              {
+                lightness: "40",
+              },
+            ],
+          },
+          {
+            featureType: "transit",
+            elementType: "all",
+            stylers: [
+              {
+                saturation: -100,
+              },
+              {
+                visibility: "simplified",
+              },
+            ],
+          },
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [
+              {
+                hue: "#ffff00",
+              },
+              {
+                lightness: -25,
+              },
+              {
+                saturation: -97,
+              },
+            ],
+          },
+          {
+            featureType: "water",
+            elementType: "labels",
+            stylers: [
+              {
+                lightness: -25,
+              },
+              {
+                saturation: -100,
+              },
+            ],
+          },
+        ],
+      });
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: pin,
+      });
+    }
+    google.maps.event.addDomListener(window, "load", initMap);
+  </script>
+</html>
